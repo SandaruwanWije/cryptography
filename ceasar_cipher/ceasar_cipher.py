@@ -10,12 +10,12 @@ def encrypt(msg, key):
         if int_ltr > 64 and int_ltr < 91:
             new_int_ltr = int_ltr + key
             if new_int_ltr > 90:
-               new_int_ltr = 65 + (key - (90 - int_ltr))
+               new_int_ltr = 64 + (key - (90 - int_ltr))
             cipher = cipher + chr(new_int_ltr)
         elif int_ltr > 96 and int_ltr < 123:
             new_int_ltr = int_ltr + key
             if new_int_ltr > 122:
-               new_int_ltr = 97 + (key - (122 - int_ltr))
+               new_int_ltr = 96 + (key - (122 - int_ltr))
             cipher = cipher + chr(new_int_ltr)
         else:
             cipher = cipher + letter
@@ -28,12 +28,12 @@ def decrypt(cipher, key):
         if int_ltr > 64 and int_ltr < 91:
             new_int_ltr = int_ltr - key
             if new_int_ltr < 65:
-               new_int_ltr = 90 - (65 - new_int_ltr)
+               new_int_ltr = 91 - (65 - new_int_ltr)
             msg = msg + chr(new_int_ltr)
         elif int_ltr > 96 and int_ltr < 123:
             new_int_ltr = int_ltr - key
             if new_int_ltr < 97:
-               new_int_ltr = 122 - (97 - new_int_ltr)
+               new_int_ltr = 123 - (97 - new_int_ltr)
             msg = msg + chr(new_int_ltr)
         else:
             msg = msg + letter
